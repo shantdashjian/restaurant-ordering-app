@@ -14,15 +14,15 @@ function renderMenuOptions() {
 
         innerHTML += `
             <div class="menu-option">
-                <div id="emoji">
+                <div class="emoji">
                   ${menuOption.emoji}
                 </div>
-                <div id="details">
-                  <p>${menuOption.name}</p>
-                  <p>${ingredients}</p>
-                  <p>${menuOption.price}</p>
+                <div class="details">
+                  <p class="menu-option-name">${menuOption.name}</p>
+                  <p class="menu-option-ingredients">${ingredients}</p>
+                  <p class="menu-option-price">$${menuOption.price}</p>
                 </div>
-                <div>
+                <div class="add-option-btn-container">
 					<button class="add-option-btn" data-add-option-id="${menuOption.id}">+</button>				
                 </div>
             </div>

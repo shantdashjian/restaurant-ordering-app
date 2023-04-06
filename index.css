@@ -34,3 +34,59 @@ h2 {
     display: none;
 }
 
+#main {
+    padding: 20px 46px 0px 46px;
+}
+
+.menu-option {
+    padding: 46px 0px 46px 0px;
+}
+
+.emoji {
+    font-size: 78px;
+}
+
+.menu-option {
+    border-bottom: 1px solid #D2D2D2;
+}
+.add-option-btn-container {
+    margin-left: auto;
+}
+
+.details {
+
+    margin-left: 20px;
+}
+
+p {
+    margin: 0px;
+}
+
+.menu-option-name {
+    font-size: 28px;
+}
+
+.menu-option-ingredients {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.menu-option-price {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.add-option-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #DEDEDE;
+    background: white;
+    font-size: 32px;
+    color: #3C3C3C;
+    font-family: 'Inter', sans-serif;
+    padding: 0px 0px 2px 0px;
+    margin-top: 5px;
+}
+
+
