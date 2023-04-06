@@ -60,6 +60,8 @@ function removeMenuOption(id) {
 function renderOrder() {
     if (orderItems.length > 0) {
         document.getElementById('order-and-thank-you').classList.remove('hidden')
+        document.getElementById('order').classList.remove('hidden')
+        document.getElementById('thank-you').classList.add('hidden')
         const orderItemsEl = document.getElementById('order-items')
         let innerHTML = ''
         let totalPrice = 0
@@ -85,4 +87,21 @@ function renderOrder() {
 
 const completeOrderBtn = document.getElementById('complete-order-btn')
 completeOrderBtn.addEventListener('click', () => {
+    document.getElementById('card-details').classList.remove('hidden')
+})
+
+const payBtn = document.getElementById('pay-btn')
+const cardDetailsForm = document.getElementById('card-details-form')
+cardDetailsForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const cardDetailsFormData = new FormData(cardDetailsForm)
+    const name = cardDetailsFormData.get('name')
+    document.getElementById('card-details').classList.add('hidden')
+    let thankYouEl = document.getElementById('thank-you');
+    document.getElementById('order').classList.add('hidden')
+    thankYouEl.classList.remove('hidden')
+    thankYouEl.innerHTML = `
+        <p>Thanks, ${name}! Your order is on its way!</p>
+    `
+    orderItems = []
 })
