@@ -102,6 +102,7 @@ cardDetailsForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const cardDetailsFormData = new FormData(cardDetailsForm)
     const name = cardDetailsFormData.get('name')
+    cardDetailsForm.reset()
     document.getElementById('card-details').classList.add('hidden')
     let thankYouEl = document.getElementById('thank-you');
     document.getElementById('order').classList.add('hidden')

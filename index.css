@@ -15,7 +15,7 @@ h1, h2 {
 
 #header {
     padding: 46px;
-    background-image: url("images/background.jpeg");
+    background-image: url("images/background.png");
     background-size: cover;
     color: white;
 }
@@ -160,7 +160,6 @@ p {
 
 #card-details {
     font-family: Verdana;
-    margin: 46px;
     box-shadow: 0 0 1000px #666;
     padding: 47px 24px 0px 24px;
     text-align: center;
@@ -187,6 +186,7 @@ p {
     width: 100%;
     margin-bottom: 23px;
     border-radius: 2px;
+    box-sizing: border-box;
 }
 
 #card-details button {
