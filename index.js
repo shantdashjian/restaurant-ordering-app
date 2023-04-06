@@ -1,6 +1,7 @@
 import { menuArray } from './data.js'
 
 const menuOptions = document.getElementById('menu-options')
+const order = []
 
 function renderMenuOptions() {
     let innerHTML = ''
@@ -21,8 +22,8 @@ function renderMenuOptions() {
                   <p>${ingredients}</p>
                   <p>${menuOption.price}</p>
                 </div>
-                <div id="add-option-btn">
-					<button>+</button>				
+                <div>
+					<button class="add-option-btn" data-option-id="${menuOption.id}">+</button>				
                 </div>
             </div>
         `
@@ -32,3 +33,43 @@ function renderMenuOptions() {
 }
 
 renderMenuOptions()
+
+document.addEventListener('click', (e) => {
+    if (e.target.dataset.optionId) {
+        addMenuOption(e.target.dataset.optionId)
+    }
+})
+
+let orderItems = []
+
+function addMenuOption(id) {
+    let option = menuArray.filter(option => option.id == id)[0]
+    orderItems.push(option)
+    renderOrder()
+}
+
+function renderOrder() {
+    document.getElementById('order-and-thank-you').classList.remove('hidden')
+    const orderItemsEl = document.getElementById('order-items')
+    let innerHTML = ''
+    let totalPrice = 0
+    orderItems.forEach(item => {
+        totalPrice += item.price
+        innerHTML += `
+            <div>
+              <p>${item.name}</p>
+              <button>Remove</button>
+              <p>${item.price}</p>
+            </div>
+        `
+    })
+    orderItemsEl.innerHTML = innerHTML
+    document.getElementById('total-price').innerHTML = `
+        <p>Total price:</p>
+        <p>${totalPrice}</p>
+    `
+}
+
+const completeOrderBtn = document.getElementById('complete-order-btn')
+completeOrderBtn.addEventListener('click', () => {
+})

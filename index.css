@@ -5,3 +5,8 @@ body {
 .menu-option {
     display: flex;
 }
+
+.hidden {
+    display: none;
+}
+
