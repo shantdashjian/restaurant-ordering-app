@@ -87,7 +87,9 @@ function renderOrder() {
 
 const completeOrderBtn = document.getElementById('complete-order-btn')
 completeOrderBtn.addEventListener('click', () => {
-    document.getElementById('card-details').classList.remove('hidden')
+    let cardDetails = document.getElementById('card-details');
+    cardDetails.classList.remove('hidden')
+    // cardDetails.classList.add('fixed')
 })
 
 const payBtn = document.getElementById('pay-btn')

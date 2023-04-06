@@ -8,9 +8,11 @@ body {
     margin: 40px auto auto auto;
     border: 1px black solid;
 }
+
 h1, h2 {
     margin: 0px;
 }
+
 #header {
     padding: 46px;
     background-image: url("images/background.jpeg");
@@ -49,6 +51,7 @@ h2 {
 .menu-option {
     border-bottom: 1px solid #D2D2D2;
 }
+
 .add-option-btn-container {
     margin-left: auto;
 }
@@ -143,16 +146,66 @@ p {
 
 #complete-order-btn {
     margin-top: 53px;
-   background-color: #16DB99;
-   color: white;
+    background-color: #16DB99;
+    color: white;
     border: none;
     font-family: Verdana;
     width: 100%;
     font-size: 16px;
-    padding-top: 18px ;
+    padding-top: 18px;
     padding-bottom: 18px;
     text-align: center;
     border-radius: 2px;
+    font-weight: 700;
+}
+
+#card-details {
+    font-family: Verdana;
+    margin: 46px;
+    box-shadow: 0 0 1000px #666;
+    padding: 47px 24px 0px 24px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 524px;
+    box-sizing: border-box;
+    height: 592px;
+    background-color: white;
+}
+
+#card-details-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 47px;
+}
+
+#card-details input, #card-details button {
+    height: 71px;
+    width: 100%;
+    margin-bottom: 23px;
+    border-radius: 2px;
+}
+
+#card-details button {
+    margin-top: 23px;
+    background-color: #16DB99;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#card-details-form {
+    margin-bottom: 0px;
+}
+
+#card-details input {
+    padding-left: 26px;
+    border: 1px solid #757575;
 }
 
 
