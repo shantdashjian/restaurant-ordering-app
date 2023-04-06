@@ -3,14 +3,12 @@ import {menuArray} from './data.js'
 const menuOptions = document.getElementById('menu-options')
 const order = []
 
+renderMenuOptions()
+
 function renderMenuOptions() {
     let innerHTML = ''
     menuArray.forEach(menuOption => {
-        let ingredients = ''
-        menuOption.ingredients.forEach(ingredient => {
-            ingredients += ingredient + ', '
-        })
-        ingredients = ingredients.substring(0, ingredients.length - 1)
+        const ingredients = stringifyIngredients(menuOption);
 
         innerHTML += `
             <div class="menu-option">
@@ -32,7 +30,13 @@ function renderMenuOptions() {
     menuOptions.innerHTML = innerHTML
 }
 
-renderMenuOptions()
+function stringifyIngredients(menuOption) {
+    let ingredients = ''
+    menuOption.ingredients.forEach(ingredient => {
+        ingredients += ingredient + ', '
+    })
+    return ingredients.substring(0, ingredients.length - 1)
+}
 
 document.addEventListener('click', (e) => {
     if (e.target.dataset.addOptionId) {
@@ -86,14 +90,14 @@ function renderOrder() {
 }
 
 const completeOrderBtn = document.getElementById('complete-order-btn')
+
 completeOrderBtn.addEventListener('click', () => {
     let cardDetails = document.getElementById('card-details');
     cardDetails.classList.remove('hidden')
-    // cardDetails.classList.add('fixed')
 })
 
-const payBtn = document.getElementById('pay-btn')
 const cardDetailsForm = document.getElementById('card-details-form')
+
 cardDetailsForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const cardDetailsFormData = new FormData(cardDetailsForm)
