@@ -1,48 +1,53 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<header id="header">
-  <h1>Jimmy's Diner</h1>
-  <h2>The best burgers and pizzas in town.</h2>
-</header>
-<main id="main">
-  <section id="menu-options">
+<div id="container">
+  <header id="header">
+    <h1>Jimmy's Diner</h1>
+    <h2>The best burgers and pizzas in town.</h2>
+  </header>
+  <main id="main">
+    <section id="menu-options">
 
-  </section>
-  <section class="hidden" id="order-and-thank-you">
-    <div id="order">
-      <h3>Your order</h3>
-      <div id="order-items">
+    </section>
+    <section class="hidden" id="order-and-thank-you">
+      <div id="order">
+        <h3>Your order</h3>
+        <div id="order-items">
+
+        </div>
+        <div id="total-price">
+
+        </div>
+        <button id="complete-order-btn">Complete order</button>
+      </div>
+      <div id="thank-you" class="hidden">
 
       </div>
-      <div id="total-price">
-
-      </div>
-      <button id="complete-order-btn">Complete order</button>
-    </div>
-    <div id="thank-you" class="hidden">
-
-    </div>
-  </section>
-  <section id="card-details" class="hidden">
-    <form id="card-details-form">
-      <div>
-        <input type="text" placeholder="Enter your name" name="name" id="name" required>
-      </div>
-      <div>
-        <input type="text" placeholder="Enter card number" id="card-number" name="card-number" required>
-      </div>
-      <div>
-        <input type="text" placeholder="Enter CVV" id="cvv" name="cvv" required>
-      </div>
-      <button type="submit" id="pay-btn">Pay</button>
-    </form>
-  </section>
-</main>
-<script src="index.js" type="module"></script>
+    </section>
+    <section id="card-details" class="hidden">
+      <form id="card-details-form">
+        <div>
+          <input type="text" placeholder="Enter your name" name="name" id="name" required>
+        </div>
+        <div>
+          <input type="text" placeholder="Enter card number" id="card-number" name="card-number" required>
+        </div>
+        <div>
+          <input type="text" placeholder="Enter CVV" id="cvv" name="cvv" required>
+        </div>
+        <button type="submit" id="pay-btn">Pay</button>
+      </form>
+    </section>
+  </main>
+  <script src="index.js" type="module"></script>
+</div>
 </body>
 </html>
 

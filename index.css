@@ -1,5 +1,29 @@
 body {
     margin: 0;
+    font-family: 'Smythe', cursive;
+}
+
+#container {
+    width: 600px;
+    margin: 40px auto auto auto;
+    border: 1px black solid;
+}
+h1, h2 {
+    margin: 0px;
+}
+#header {
+    padding: 46px;
+    background-image: url("images/background.jpeg");
+    background-size: cover;
+    color: white;
+}
+
+h1 {
+    size: 39px;
+}
+
+h2 {
+    size: 22px;
 }
 
 .menu-option {
