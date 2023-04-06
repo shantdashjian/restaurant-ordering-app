@@ -1,4 +1,4 @@
-import { menuArray } from './data.js'
+import {menuArray} from './data.js'
 
 const menuOptions = document.getElementById('menu-options')
 const order = []
@@ -23,7 +23,7 @@ function renderMenuOptions() {
                   <p>${menuOption.price}</p>
                 </div>
                 <div>
-					<button class="add-option-btn" data-option-id="${menuOption.id}">+</button>				
+					<button class="add-option-btn" data-add-option-id="${menuOption.id}">+</button>				
                 </div>
             </div>
         `
@@ -35,8 +35,10 @@ function renderMenuOptions() {
 renderMenuOptions()
 
 document.addEventListener('click', (e) => {
-    if (e.target.dataset.optionId) {
-        addMenuOption(e.target.dataset.optionId)
+    if (e.target.dataset.addOptionId) {
+        addMenuOption(e.target.dataset.addOptionId)
+    } else if (e.target.dataset.removeOptionId) {
+        removeMenuOption(e.target.dataset.removeOptionId)
     }
 })
 
@@ -48,26 +50,37 @@ function addMenuOption(id) {
     renderOrder()
 }
 
+function removeMenuOption(id) {
+    let option = menuArray.filter(option => option.id == id)[0]
+    let index = orderItems.indexOf(option)
+    orderItems.splice(index, 1)
+    renderOrder()
+}
+
 function renderOrder() {
-    document.getElementById('order-and-thank-you').classList.remove('hidden')
-    const orderItemsEl = document.getElementById('order-items')
-    let innerHTML = ''
-    let totalPrice = 0
-    orderItems.forEach(item => {
-        totalPrice += item.price
-        innerHTML += `
+    if (orderItems.length > 0) {
+        document.getElementById('order-and-thank-you').classList.remove('hidden')
+        const orderItemsEl = document.getElementById('order-items')
+        let innerHTML = ''
+        let totalPrice = 0
+        orderItems.forEach(item => {
+            totalPrice += item.price
+            innerHTML += `
             <div>
               <p>${item.name}</p>
-              <button>Remove</button>
+              <button data-remove-option-id="${item.id}">Remove</button>
               <p>${item.price}</p>
             </div>
         `
-    })
-    orderItemsEl.innerHTML = innerHTML
-    document.getElementById('total-price').innerHTML = `
-        <p>Total price:</p>
-        <p>${totalPrice}</p>
-    `
+        })
+        orderItemsEl.innerHTML = innerHTML
+        document.getElementById('total-price').innerHTML = `
+          <p>Total price:</p>
+          <p>${totalPrice}</p>
+        `
+    } else {
+        document.getElementById('order-and-thank-you').classList.add('hidden')
+    }
 }
 
 const completeOrderBtn = document.getElementById('complete-order-btn')
