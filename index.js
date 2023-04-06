@@ -68,17 +68,17 @@ function renderOrder() {
         orderItems.forEach(item => {
             totalPrice += item.price
             innerHTML += `
-            <div>
-              <p>${item.name}</p>
-              <button data-remove-option-id="${item.id}">Remove</button>
-              <p>${item.price}</p>
+            <div class="order-item">
+              <p class="order-item-name">${item.name}</p>
+              <button data-remove-option-id="${item.id}" class="order-item-remove">remove</button>
+              <p class="order-item-price">$${item.price}</p>
             </div>
         `
         })
         orderItemsEl.innerHTML = innerHTML
         document.getElementById('total-price').innerHTML = `
-          <p>Total price:</p>
-          <p>${totalPrice}</p>
+          <p id="total-price-title">Total price:</p>
+          <p id="total-price-value">$${totalPrice}</p>
         `
     } else {
         document.getElementById('order-and-thank-you').classList.add('hidden')

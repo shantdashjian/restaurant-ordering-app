@@ -89,4 +89,71 @@ p {
     margin-top: 5px;
 }
 
+#order-and-thank-you {
+    padding: 40px 0px 50px 0px;
+}
+
+.order-title {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.order-item {
+    display: flex;
+}
+
+.order-item-name {
+    font-size: 28px;
+}
+
+.order-item-remove {
+    font-size: 12px;
+    font-family: Verdana;
+    color: #BBBBBB;
+    border: none;
+    background: none;
+    margin-left: 8px;
+    margin-top: 2px;
+}
+
+.order-item-price {
+    font-size: 24px;
+    margin-left: auto;
+}
+
+#order-items {
+    border-bottom: 2px solid #393333;
+    padding-bottom: 16px;
+}
+
+#total-price {
+    padding-top: 16px;
+    display: flex;
+}
+
+#total-price-title {
+    font-size: 28px;
+}
+
+#total-price-value {
+    font-size: 24px;
+    margin-left: auto;
+}
+
+#complete-order-btn {
+    margin-top: 53px;
+   background-color: #16DB99;
+   color: white;
+    border: none;
+    font-family: Verdana;
+    width: 100%;
+    font-size: 16px;
+    padding-top: 18px ;
+    padding-bottom: 18px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+
 
