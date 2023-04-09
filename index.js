@@ -8,7 +8,7 @@ renderMenuOptions()
 function renderMenuOptions() {
     let innerHTML = ''
     menuArray.forEach(menuOption => {
-        const ingredients = stringifyIngredients(menuOption);
+        const ingredients = menuOption.ingredients.join(', ');
 
         innerHTML += `
             <div class="menu-option">
@@ -28,14 +28,6 @@ function renderMenuOptions() {
 
     })
     menuOptions.innerHTML = innerHTML
-}
-
-function stringifyIngredients(menuOption) {
-    let ingredients = ''
-    menuOption.ingredients.forEach(ingredient => {
-        ingredients += ingredient + ', '
-    })
-    return ingredients.substring(0, ingredients.length - 1)
 }
 
 document.addEventListener('click', (e) => {
