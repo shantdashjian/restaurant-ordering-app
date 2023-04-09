@@ -4,7 +4,6 @@ body {
 }
 
 #container {
-    width: 600px;
     margin: 40px auto auto auto;
     border: 1px black solid;
 }
@@ -30,6 +29,7 @@ h2 {
 
 .menu-option {
     display: flex;
+    justify-content: space-between;
 }
 
 .hidden {
