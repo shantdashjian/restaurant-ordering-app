@@ -3,7 +3,7 @@ body {
     font-family: 'Smythe', cursive;
 }
 
-#container {
+.container {
     margin: 40px auto auto auto;
     border: 1px black solid;
 }
@@ -12,7 +12,7 @@ h1, h2 {
     margin: 0px;
 }
 
-#header {
+.header {
     padding: 46px;
     background-image: url("images/background.png");
     background-size: cover;
@@ -36,7 +36,7 @@ h2 {
     display: none;
 }
 
-#main {
+.main {
     padding: 20px 46px 0px 46px;
 }
 
@@ -134,11 +134,11 @@ p {
     display: flex;
 }
 
-#total-price-title {
+.total-price-title {
     font-size: 28px;
 }
 
-#total-price-value {
+.total-price-value {
     font-size: 24px;
     margin-left: auto;
 }
@@ -175,7 +175,7 @@ p {
     background-color: white;
 }
 
-#card-details-title {
+.card-details-title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 47px;

@@ -81,8 +81,8 @@ function renderOrder() {
         })
         orderItemsEl.innerHTML = innerHTML
         document.getElementById('total-price').innerHTML = `
-          <p id="total-price-title">Total price:</p>
-          <p id="total-price-value">$${totalPrice}</p>
+          <p class="total-price-title">Total price:</p>
+          <p class="total-price-value">$${totalPrice}</p>
         `
     } else {
         document.getElementById('order-and-thank-you').classList.add('hidden')
