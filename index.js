@@ -1,16 +1,17 @@
 import {menuArray} from './data.js'
 
 const menuOptions = document.getElementById('menu-options')
+let orderItems = []
 const order = []
+const completeOrderBtn = document.getElementById('complete-order-btn')
+const cardDetailsForm = document.getElementById('card-details-form')
 
 renderMenuOptions()
 
 function renderMenuOptions() {
-    let innerHTML = ''
-    menuArray.forEach(menuOption => {
+    menuOptions.innerHTML = menuArray.map(menuOption => {
         const ingredients = menuOption.ingredients.join(', ');
-
-        innerHTML += `
+        return `
             <div class="menu-option">
                 <div class="emoji">
                   ${menuOption.emoji}
@@ -25,9 +26,7 @@ function renderMenuOptions() {
                 </div>
             </div>
         `
-
-    })
-    menuOptions.innerHTML = innerHTML
+    }).join('')
 }
 
 document.addEventListener('click', (e) => {
@@ -37,8 +36,6 @@ document.addEventListener('click', (e) => {
         removeMenuOption(e.target.dataset.removeOptionId)
     }
 })
-
-let orderItems = []
 
 function addMenuOption(id) {
     let option = menuArray.filter(option => option.id == id)[0]
@@ -59,19 +56,17 @@ function renderOrder() {
         document.getElementById('order').classList.remove('hidden')
         document.getElementById('thank-you').classList.add('hidden')
         const orderItemsEl = document.getElementById('order-items')
-        let innerHTML = ''
         let totalPrice = 0
-        orderItems.forEach(item => {
+        orderItemsEl.innerHTML = orderItems.map(item => {
             totalPrice += item.price
-            innerHTML += `
+            return `
             <div class="order-item">
               <p class="order-item-name">${item.name}</p>
               <button data-remove-option-id="${item.id}" class="order-item-remove">remove</button>
               <p class="order-item-price">$${item.price}</p>
             </div>
         `
-        })
-        orderItemsEl.innerHTML = innerHTML
+        }).join('')
         document.getElementById('total-price').innerHTML = `
           <p class="total-price-title">Total price:</p>
           <p class="total-price-value">$${totalPrice}</p>
@@ -81,14 +76,10 @@ function renderOrder() {
     }
 }
 
-const completeOrderBtn = document.getElementById('complete-order-btn')
-
 completeOrderBtn.addEventListener('click', () => {
     let cardDetails = document.getElementById('card-details');
     cardDetails.classList.remove('hidden')
 })
-
-const cardDetailsForm = document.getElementById('card-details-form')
 
 cardDetailsForm.addEventListener('submit', (e) => {
     e.preventDefault()
