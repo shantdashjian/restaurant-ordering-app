@@ -12,7 +12,7 @@ function renderMenuOptions() {
     menuOptions.innerHTML = menuArray.map(menuOption => {
         const ingredients = menuOption.ingredients.join(', ');
         return `
-            <div class="menu-option">
+            <div class="menu-option flex">
                 <div class="emoji">
                   ${menuOption.emoji}
                 </div>
@@ -60,7 +60,7 @@ function renderOrder() {
         orderItemsEl.innerHTML = orderItems.map(item => {
             totalPrice += item.price
             return `
-            <div class="order-item">
+            <div class="order-item flex">
               <p class="order-item-name">${item.name}</p>
               <button data-remove-option-id="${item.id}" class="order-item-remove">remove</button>
               <p class="order-item-price">$${item.price}</p>

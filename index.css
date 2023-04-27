@@ -27,8 +27,11 @@ h2 {
     size: 22px;
 }
 
-.menu-option {
+.flex {
     display: flex;
+}
+
+.menu-option {
     justify-content: space-between;
 }
 
@@ -101,10 +104,6 @@ p {
     margin-bottom: 40px;
 }
 
-.order-item {
-    display: flex;
-}
-
 .order-item-name {
     font-size: 28px;
 }
@@ -131,7 +130,6 @@ p {
 
 #total-price {
     padding-top: 16px;
-    display: flex;
 }
 
 .total-price-title {
