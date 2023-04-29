@@ -1,7 +1,7 @@
 import {menuArray} from './data.js'
 
 const menuOptions = document.getElementById('menu-options')
-let orderItems = []
+const orderItems = []
 const order = []
 const completeOrderBtn = document.getElementById('complete-order-btn')
 const cardDetailsForm = document.getElementById('card-details-form')
@@ -93,5 +93,5 @@ cardDetailsForm.addEventListener('submit', (e) => {
     thankYouEl.innerHTML = `
         <p>Thanks, ${name}! Your order is on its way!</p>
     `
-    orderItems = []
+    orderItems.length = 0
 })
