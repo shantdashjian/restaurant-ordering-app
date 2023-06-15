@@ -5,6 +5,8 @@ const orderItems = []
 const order = []
 const completeOrderBtn = document.getElementById('complete-order-btn')
 const cardDetailsForm = document.getElementById('card-details-form')
+const cardNumberEl = document.getElementById('card-number')
+const cvvEl = document.getElementById('cvv')
 
 renderMenuOptions()
 
@@ -95,3 +97,17 @@ cardDetailsForm.addEventListener('submit', (e) => {
     `
     orderItems.length = 0
 })
+
+window.validateCardNumber = function() {
+    const regex = /^\d{1,16}$/
+    if(!regex.test(cardNumberEl.value)) {
+        cardNumberEl.value = ''
+    }
+}
+
+window.validateCVV = function() {
+    const regex = /^\d{1,3}$/
+    if(!regex.test(cvvEl.value)) {
+        cvvEl.value = ''
+    }
+}

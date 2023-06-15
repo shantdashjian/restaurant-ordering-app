@@ -41,10 +41,15 @@
           <input type="text" placeholder="Enter your name" name="name" id="name" required>
         </div>
         <div>
-          <input type="text" placeholder="Enter card number" id="card-number" name="card-number" required>
+          <input type="text" minlength="16" maxlength="16" placeholder="Enter card number" id="card-number"
+                 name="card-number"
+                 oninput="validateCardNumber()"
+                 required>
         </div>
         <div>
-          <input type="text" placeholder="Enter CVV" id="cvv" name="cvv" required>
+          <input type="text" minlength="3" maxlength="3" placeholder="Enter CVV" id="cvv" name="cvv"
+                 oninput="validateCVV()"
+                 required>
         </div>
         <button type="submit" id="pay-btn">Pay</button>
       </form>
